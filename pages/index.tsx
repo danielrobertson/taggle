@@ -38,6 +38,9 @@ const Home: NextPage = () => {
 
   const onAddNewTag = () => setEditingTags(true);
 
+  const onTagClick = (event: any) =>
+    setTags(tags.filter((t) => t !== event.target.innerText));
+
   return (
     <div className={styles.container}>
       <Head>
@@ -54,10 +57,26 @@ const Home: NextPage = () => {
           <div className="mt-2">
             {tags.map((t) => (
               <span
+                role="button"
                 key={t}
+                onClick={onTagClick}
                 className="bg-green-700 text-blue-50 py-1 px-2 rounded text-sm font-bold ml-1"
               >
                 {t}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="inline pl-1 h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
               </span>
             ))}
             {editingTags && (
