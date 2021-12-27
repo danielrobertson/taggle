@@ -11,7 +11,15 @@ const Home: NextPage = () => {
 
   const handleChange = (event: any) => setQuery(event?.target?.value);
 
-  const onSearchClick = () => {
+  const handleTagChange = (event: any) => setTag(event?.target?.value);
+
+  const handleKeyDown = (event: any) => {
+    if (event.key === "Enter") {
+      onSearch();
+    }
+  };
+
+  const onSearch = () => {
     const encodedParams = encodeURIComponent(`${tag} ${query}`);
     const googleUrl = `https://www.google.com/search?q=${encodedParams}`;
     window.location.href = googleUrl;
@@ -29,7 +37,14 @@ const Home: NextPage = () => {
 
         <p className={styles.description}>
           Current tag:
-          <code className={styles.code}>{tag}</code>
+          <input
+            className="inline-block placeholder:italic placeholder:text-gray-400 bg-white border border-gray-300 rounded-sm ml-3 py-3 pl-3 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+            placeholder=""
+            type="text"
+            name="search"
+            value={tag}
+            onChange={handleTagChange}
+          />
         </p>
 
         <label className="relative block min-w-full md:px-16">
@@ -53,11 +68,12 @@ const Home: NextPage = () => {
             name="search"
             value={query}
             onChange={handleChange}
+            onKeyDown={handleKeyDown}
           />
         </label>
         <button
           className="mt-7 px-6 py-2 text-lg round-md bg-gray-100 border-2 border-gray-100 hover:border-gray-300"
-          onClick={onSearchClick}
+          onClick={onSearch}
         >
           Search
         </button>
