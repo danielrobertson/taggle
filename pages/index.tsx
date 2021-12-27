@@ -38,7 +38,7 @@ const Home: NextPage = () => {
         <p className={styles.description}>
           Current tag:
           <input
-            className="inline-block placeholder:italic placeholder:text-gray-400 bg-white border border-gray-300 rounded-sm ml-3 py-3 pl-3 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+            className="inline-block placeholder:italic placeholder:text-gray-400 bg-white border border-gray-300 ml-3 py-2 pl-3 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
             placeholder=""
             type="text"
             name="search"
