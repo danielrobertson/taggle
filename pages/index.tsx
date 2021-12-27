@@ -70,7 +70,7 @@ const Home: NextPage = () => {
       <main className={classnames(styles.main, "container mx-auto")}>
         <h1 className={styles.title}>Taggle</h1>
         <p className="mt-3 text-gray-700 italic">
-          Search Google with predefined tags
+          Search Google with persistent prefix tags
         </p>
 
         <p className={styles.description}>
