@@ -50,11 +50,11 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={classnames(styles.main, "container mx-auto")}>
-        <h1 className={styles.title}>Google with tags</h1>
+        <h1 className={styles.title}>Taggle</h1>
+        <p className="mt-3 text-gray-700 italic">Google with predefined tags</p>
 
         <p className={styles.description}>
-          Tags
-          <div className="mt-2">
+          <div className="">
             {tags.map((t) => (
               <span
                 role="button"
