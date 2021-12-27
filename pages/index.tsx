@@ -1,17 +1,33 @@
 import type { NextPage } from "next";
-import { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import classnames from "classnames";
 
+const LOCAL_STORAGE_NAME = "taggleTags";
+
 const Home: NextPage = () => {
-  const [tags, setTags] = useState(["japanese"]);
+  let initialTags = [];
+  if (typeof window !== "undefined") {
+    initialTags = JSON.parse(localStorage.getItem(LOCAL_STORAGE_NAME) || "[]");
+    if (initialTags.length === 0) {
+      initialTags = ["japanese"];
+    }
+  }
+
+  const [tags, setTags] = useState([...initialTags]);
   const [query, setQuery] = useState();
   const [newTag, setNewTag] = useState("");
   const [editingTags, setEditingTags] = useState(false);
 
   const handleChange = (event: any) => setQuery(event?.target?.value);
+
+  // update local storage
+  useEffect(
+    () => localStorage.setItem(LOCAL_STORAGE_NAME, JSON.stringify(tags)),
+    [tags]
+  );
 
   const handleNewTagChange = (event: any) => {
     if (event.key === "Enter" || event.keyCode === 32) {
@@ -38,8 +54,10 @@ const Home: NextPage = () => {
 
   const onAddNewTag = () => setEditingTags(true);
 
-  const onTagClick = (event: any) =>
-    setTags(tags.filter((t) => t !== event.target.innerText));
+  const onTagClick = (event: any) => {
+    const newTags = tags.filter((t: any) => t !== event.target.innerText);
+    setTags(newTags);
+  };
 
   return (
     <div className={styles.container}>
