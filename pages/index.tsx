@@ -54,8 +54,8 @@ const Home: NextPage = () => {
 
   const onAddNewTag = () => setEditingTags(true);
 
-  const onTagClick = (event: any) => {
-    const newTags = tags.filter((t: any) => t !== event.target.innerText);
+  const onTagClick = (tag: string) => {
+    const newTags = tags.filter((t: any) => t !== tag);
     setTags(newTags);
   };
 
@@ -76,17 +76,15 @@ const Home: NextPage = () => {
         <p className={styles.description}>
           <div className="">
             {tags.map((t) => (
-              <span
-                role="button"
+              <button
                 key={t}
-                onClick={onTagClick}
-                className="bg-green-700 text-blue-50 py-1 px-2 rounded text-sm font-bold ml-1"
+                onClick={() => onTagClick(t)}
+                className="inline bg-green-700 text-blue-50 px-2 rounded text-sm font-bold ml-1"
               >
                 {t}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="inline pl-1 h-4 w-4"
-                  fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
@@ -97,7 +95,7 @@ const Home: NextPage = () => {
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
-              </span>
+              </button>
             ))}
             {editingTags && (
               <input

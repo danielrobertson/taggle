@@ -1,5 +1,5 @@
 {
-  "name": "google-search-tags",
+  "name": "taggle",
   "private": true,
   "scripts": {
     "dev": "next dev",
