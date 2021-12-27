@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { GetServerSideProps, GetStaticProps, NextPage } from "next";
 import { SyntheticEvent, useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
@@ -154,21 +154,23 @@ const Home: NextPage = () => {
         </button>
       </main>
 
-      <footer className={classnames(styles.footer, "text-sm text-gray-700")}>
-        Made with ❤️ by&#160;
-        <a
-          className="inline-block text-sky-700"
-          href="https://danielrobertson.me/"
-        >
-          @danielrobertson
-        </a>
-        &#160;and&#160;
-        <a
-          className="inline-block text-teal-900"
-          href="https://github.com/darwin-face"
-        >
-          @darwin-face
-        </a>
+      <footer className={classnames(styles.footer, "text-xs text-gray-700")}>
+        <div className="mx-auto text-center">
+          Made in ATX 🤠 by&#160;
+          <a
+            className="inline text-teal-800"
+            href="https://danielrobertson.me/"
+          >
+            @danielrobertson
+          </a>
+          &#160;and&#160;
+          <a
+            className="inline text-teal-800 whitespace-nowrap"
+            href="https://github.com/darwin-face"
+          >
+            @darwin-face
+          </a>
+        </div>
       </footer>
     </div>
   );
