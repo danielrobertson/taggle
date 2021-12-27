@@ -154,16 +154,20 @@ const Home: NextPage = () => {
         </button>
       </main>
 
-      <footer className={styles.footer}>
+      <footer className={classnames(styles.footer, "text-sm text-gray-700")}>
+        Made with ❤️ by&#160;
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          className="inline-block text-sky-700"
+          href="https://danielrobertson.me/"
         >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
+          @danielrobertson
+        </a>
+        &#160;and&#160;
+        <a
+          className="inline-block text-teal-900"
+          href="https://github.com/darwin-face"
+        >
+          @darwin-face
         </a>
       </footer>
     </div>
