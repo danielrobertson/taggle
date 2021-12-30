@@ -1,3 +1,10 @@
+# Taggle 
+Google search with predefined, customizable prefix tags. 
+
+I built this app to solve a problem while studying Japanese and frustrated with needing to type "japanese <my search query>" every time to get pertinent results. 
+
+# Development
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
