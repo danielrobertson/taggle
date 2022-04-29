@@ -1,7 +1,7 @@
 # Taggle 
 Google search with predefined, customizable prefix tags. 
 
-I built this app to solve a problem while studying Japanese and frustrated with needing to type "japanese <my search query>" every time to get pertinent results. 
+I built this app to solve a problem while studying Japanese when I was slowed down by needing to type "japanese <my search query>" every time to get pertinent results. Keeping the prefix tags persisted to browser sped up my Japanese language studying, and I hope it will help others too! 🙌
 
 # Development
 
