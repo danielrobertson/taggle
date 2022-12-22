@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   if (typeof window !== "undefined") {
     initialTags = JSON.parse(localStorage.getItem(LOCAL_STORAGE_NAME) || "[]");
     if (initialTags.length === 0) {
-      initialTags = ["japanese"];
+      initialTags = ["korean"];
     }
   }
 
